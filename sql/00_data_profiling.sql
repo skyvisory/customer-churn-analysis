@@ -62,7 +62,9 @@ FROM telco
 WHERE totalcharges = ' ';
 
 /*
-Thought process:
+============================================
+THOUGHT PROCESS
+============================================
 Before answering any business question, find out:
     Volume — how much data are we working with?
     Shape — what columns exist, what types are they?
@@ -70,3 +72,15 @@ Before answering any business question, find out:
     Distribution — what's the range of key numbers?
     Categories — what are the possible values in text columns?
 */
+
+-- ============================================
+-- DATA QUALITY FINDINGS
+-- ============================================
+-- 1. No NULL values found across key columns
+-- 2. No duplicate customerIDs found
+-- 3. 11 blank TotalCharges values identified
+--    - All have tenure = 0 (new customers)
+--    - Underlying value is 0, blank is a display issue
+--    - Treatment: cast to NUMERIC in Python, 
+--      NULLIF to handle blank string
+-- ============================================
