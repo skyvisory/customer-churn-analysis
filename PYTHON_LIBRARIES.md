@@ -9,7 +9,7 @@ RevOps, and strategy projects.
 
 Install everything in one command:
 ```bash
-python -m pip install pandas numpy matplotlib seaborn scikit-learn psycopg2-binary sqlalchemy jupyter ipykernel
+python -m pip install pandas numpy matplotlib seaborn scikit-learn psycopg2-binary sqlalchemy jupyter ipykernel python-dotenv
 ```
 
 Verify everything installed:
