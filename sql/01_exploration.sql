@@ -459,7 +459,16 @@ ORDER BY total_customers DESC;
 --          LTV without disrupting their loyalty profile.
 -- ============================================
 
+-- ============================================
 -- 10. Revenue at risk from churned customers
+-- Business question: What is the total dollar cost of churn — and which contract type is driving the most
+--                   revenue loss?
+-- Hypothesis: Month-to-month will dominate revenue at risk given highest churn rate and largest customer
+--             volume in that segment
+-- Note: annual_revenue_at_risk = monthly charges × 12
+--       This is a conservative estimate — does not account for lost upsell or expansion revenue
+--       that retained customers would have generated. True cost of churn is likely higher.
+-- ============================================
 SELECT
     contract,
     ROUND(SUM(monthlycharges), 2) as monthly_revenue_lost,
@@ -469,10 +478,83 @@ FROM telco
 WHERE churn = 'Yes'
 GROUP BY contract
 ORDER BY annual_revenue_at_risk DESC;
-```
 
----
+-- FINDING: Total annual revenue at risk: $1,669,570
+--          Month-to-month: $1,450,165 (87% of total)
+--          One year:         $169,421 (10% of total)
+--          Two year:          $49,984  (3% of total)
+--          1,869 total churned customers across all segments
+--          Average monthly charge per churned customer: $74.44 confirming Query 6 financial profile finding
+--
+-- INSIGHT: Churn is not evenly distributed — it is an 87% month-to-month revenue problem. Two year
+--          contracts represent just 3% of revenue at risk despite being 24% of the customer base.
+--          This confirms contract type as the single most important lever for revenue protection.
+--          Note: $1.67M is conservative — excludes lost expansion revenue, upsell opportunity, and
+--          customer acquisition cost to replace churned customers. True cost likely 2-3x higher.
+--
+-- RETENTION ROI CALCULATION:
+--          Target: 1,655 month-to-month churners
+--          Programme cost: $100 per customer = $165,500
+--          Save 15% of churners = 248 customers retained
+--          Revenue recovered: 248 × $74.44 × 12 = $221,000
+--          ROI: 33% return on retention investment
+--          Save 25% of churners = $442,000 recovered
+--          ROI: 167% return on retention investment
+--
+-- ACTION:  Present $1.67M revenue at risk figure to leadership as business case for retention budget.
+--          Frame retention programme as revenue protection not cost centre — even 15% save rate delivers
+--          positive ROI. 
+--          Priority segment: month-to-month fiber optic electronic check customers (Query 7)
+--          who represent highest concentration of this $1.45M monthly-to-month revenue at risk.
+-- ============================================
 
-Save and commit:
-```
-update SQL to PostgreSQL syntax + add revenue at risk query
+
+-- ============================================
+-- COMPLETE ANALYSIS SUMMARY
+-- ============================================
+-- DATASET: 7,043 telecom customers, 21 features
+-- PERIOD: Cross-sectional snapshot
+-- OVERALL CHURN RATE: 26.5% — above 15-25% industry benchmark
+-- TOTAL REVENUE AT RISK: $1,669,570 annually
+--
+-- TOP 5 FINDINGS:
+-- 1. Contract type is the strongest churn driver
+--    Month-to-month churns at 42% vs 3% for two-year (15x)
+--    Accounts for 87% ($1.45M) of total revenue at risk
+--
+-- 2. Highest risk profile: month-to-month + fiber optic + electronic check — 60.37% churn across 1,307 customers
+--    Churn risk factors compound multiplicatively not additively
+--
+-- 3. Churn is front-loaded — 47% in first 12 months
+--    Retention problem is fundamentally an onboarding problem
+--    Surviving year one predicts long-term loyalty
+--
+-- 4. Senior citizens face both structural AND age-driven churn
+--    Systematically placed in highest risk segments
+--    Getting seniors to two-year contracts reduces churn from 54.65% to 4.14% — a 50pp improvement
+--
+-- 5. Cross-sell is the most powerful retention tool
+--    7+ services → churn drops to single digits
+--    Every additional service multiplies switching cost
+--    2-6 service customers are the priority intervention band
+--
+-- STRATEGIC RECOMMENDATIONS:
+-- Priority 1: Contract upgrade campaign — month-to-month customers, especially fiber optic + electronic
+--             check segment. Highest ROI intervention.
+--
+-- Priority 2: Autopay migration campaign — electronic check customers. Low cost, high impact, measurable.
+--
+-- Priority 3: First 90 day onboarding programme — address front-loaded churn. Fix year one, fix overall rate.
+--
+-- Priority 4: Senior citizen contract upgrade campaign — specific messaging around stability and pricing.
+--             50pp churn reduction potential.
+--
+-- Priority 5: Cross-sell expansion to 2-6 service customers before they churn. Frame as retention not revenue.
+--
+-- NEXT STEPS:
+-- · Python cleaning and feature engineering notebook
+-- · Exploratory visualisations — bring SQL findings to life
+-- · ML churn prediction model — logistic regression + random forest
+-- · Churn risk scorecard — identify at-risk customers proactively
+-- · Executive summary report for README
+-- ============================================
