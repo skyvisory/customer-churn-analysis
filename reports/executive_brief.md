@@ -45,21 +45,46 @@ Three targeted campaigns — matched to risk level and budget efficiency:
 
 ---
 
+## Recommended Actions
+
+### Immediate (0-30 days)
+- **Approve $111,102 retention campaign budget**
+- **High Risk — personal phone outreach (1,744 customers)**
+  Offer: contract upgrade + autopay enrollment incentive
+  Owner: Retention team | SLA: 48 hours
+- **Medium Risk — automated email sequence (1,663 customers)**
+  Offer: loyalty discount + autopay enrollment
+  Owner: Marketing automation | SLA: 7 days
+- **Low Risk — monthly newsletter (3,636 customers)**
+  Standard engagement — no retention offer needed
+  Owner: Content team | SLA: 30 days
+
+### Short Term (30-90 days)
+- **Investigate fiber optic satisfaction** — 41% churn signals
+  product or service quality issues. Conduct NPS survey.
+- **Redesign onboarding programme** — 47% first-year churn
+  indicates onboarding failure. Implement 90-day success
+  programme with check-ins at day 7, 30, and 90.
+- **Bundle add-on services** — online security and tech support
+  dramatically reduce churn. Include free trial in welcome package.
+- **Senior citizen dedicated support** — seniors churn at 41.7%
+  independent of other factors. Assign dedicated onboarding
+  contact and offer assisted autopay enrollment.
+
+### Ongoing
+- **Re-score monthly** — risk tiers are not permanent.
+  Update customer scores and tier assignments every 30 days.
+- **Incentivise autopay at every touchpoint** — electronic check
+  customers churn at 3x autopay customers. Offer bill credit
+  for autopay signup across all campaigns.
+
+---
+
 ## The Ask
 
-Approve a retention campaign budget of **$111,102** to begin
-customer outreach within 30 days.
-
-| Action | Owner | Timeline |
-|---|---|---|
-| High Risk personal outreach (1,744 customers) | Retention team | 48 hours |
-| Medium Risk email sequence (1,663 customers) | Marketing automation | 7 days |
-| Low Risk newsletter (3,636 customers) | Content team | 30 days |
+Approve retention campaign budget of **$111,102** to begin
+High Risk outreach within 48 hours of approval.
 
 *Full technical report, model documentation, and customer-level
 risk scorecard available on request.*
-
----
-*Analysis based on 7,043 customer records. Save rate assumptions:
-30% High Risk, 20% Medium Risk, 10% Low Risk (industry benchmarks).*
 ```
