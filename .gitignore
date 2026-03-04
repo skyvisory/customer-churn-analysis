@@ -1,6 +1,7 @@
 # Data files - never commit raw data
 data/raw/*.csv
 data/raw/*.xlsx
+data/processed/*.pkl
 
 # Python
 __pycache__/
