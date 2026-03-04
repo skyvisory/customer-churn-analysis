@@ -333,6 +333,7 @@ Number prefix keeps files in logical order in the folder.
 | Too many colours | Max 4-5 colours per chart |
 | Pie chart with many slices | Use bar chart if more than 5 categories |
 | Y-axis not starting at 0 | Always start at 0 for bar charts |
+| $ in chart titles | Use \\$ to escape — matplotlib treats $ as LaTeX math delimiter |
 
 ---
 

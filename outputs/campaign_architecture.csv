@@ -1,0 +1,4 @@
+tier,customers,treatment,offer,owner,sla,cost_per_customer,total_cost,customers_saved,revenue_recovered,net_roi,roi_pct
+High Risk,1744,Personal phone outreach,Contract upgrade + autopay incentive,Retention team,48 hours,50,87200,330.0,322020.0,234820.0,269.3
+Medium Risk,1663,Automated email sequence,Loyalty discount,Marketing automation,24 hours,10,16630,102.0,82233.0,65603.0,394.5
+Low Risk,3636,Monthly newsletter,Standard engagement,Content team,Monthly cadence,2,7272,26.0,17323.0,10051.0,138.2
