@@ -38,7 +38,7 @@ python -c "import pandas, numpy, matplotlib, seaborn, sklearn, psycopg2, sqlalch
 | Library | Install | Import | What it does |
 |---|---|---|---|
 | `scikit-learn` | `pip install scikit-learn` | `from sklearn.xxx import xxx` | ML models, feature engineering, model evaluation |
-| `xgboost` | `pip install xgboost` | `import xgboost as xgb` | Gradient boosting — often beats random forest |
+| `xgboost` | `pip install xgboost` | `from xgboost import XGBClassifier` | Industry standard gradient boosting — usually beats random forest on tabular data |
 | `shap` | `pip install shap` | `import shap` | Explains ML model predictions in plain English |
 
 ### Database Connections
@@ -60,7 +60,7 @@ python -c "import pandas, numpy, matplotlib, seaborn, sklearn, psycopg2, sqlalch
 
 ### This project (Customer Churn Analysis)
 ```bash
-python -m pip install pandas numpy matplotlib seaborn scikit-learn psycopg2-binary sqlalchemy jupyter ipykernel
+python -m pip install pandas numpy matplotlib seaborn scikit-learn psycopg2-binary sqlalchemy jupyter ipykernel  xgboost
 ```
 
 ### Future Project 2 (Sales Pipeline Dashboard)
