@@ -205,6 +205,23 @@ psql -U postgres -d churn_analysis -f sql/00_data_profiling.sql
 
 ---
 
+## KPIs to Track in Production
+
+| Cadence | Metric | Target |
+|---|---|---|
+| Weekly | New churn events | Flag if weekly churn rate exceeds 2% |
+| Weekly | High-risk account count | Flag if Tier 1 pool growing week-on-week |
+| Monthly | Churn rate by contract type | Month-to-month target: reduce from 42.7% |
+| Monthly | Retention campaign conversion | % of contacted customers retained |
+| Monthly | First-year churn rate | Reduce from 47% baseline |
+| Monthly | Autopay adoption rate | Track shift away from electronic check |
+| Quarterly | Model AUC on new data | Retrain if AUC drops below 0.80 |
+| Quarterly | Campaign ROI by tier | High Risk target >269%, Medium >394% |
+| Quarterly | Annual contract conversion rate | % of month-to-month converted |
+| Quarterly | Add-on attach rate | Security + support bundle uptake |
+
+---
+
 ## Known Improvements
 
 - Migrate to sklearn Pipeline — bundle scaler and model
